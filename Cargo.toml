@@ -1,0 +1,36 @@
+[package]
+name = "play-revm2"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+alloy-primitives = "0.7.0"
+alloy-rpc-types-trace = { git = "https://github.com/alloy-rs/alloy", rev = "987b393" }
+alloy-rpc-types = { git = "https://github.com/alloy-rs/alloy", rev = "987b393" }
+
+revm = {version = "8.0.0", features = ["std", "ethersdb", "serde-json"]}
+revm-primitives = "3.1.1"
+revm-inspectors = { git = "https://github.com/paradigmxyz/evm-inspectors", rev= "21f8f3d", features = ["js-tracer"]}
+
+serde = "1.0.197"
+serde_json = "1.0.115"
+hex = "0.4.3"
+anyhow = "1.0.81"
+
+ethers-providers = { version = "2.0"}
+ethers-core = { version = "2.0" }
+ethers-contract = { version = "2.0.14", default-features = false }
+ruint = { version = "1.11.1", default-features = false, features = ["alloc"] }
+
+jsonrpc-core = "18.0.0"
+jsonrpc-http-server = "18.0.0"
+jsonrpc-derive = "18.0.0"
+jsonrpc-server-utils = "18.0.0"
+jsonrpc-core-client = "18.0.0"
+
+tokio = { version = "1.36", features = [
+    "rt-multi-thread",
+    "macros",
+]}
