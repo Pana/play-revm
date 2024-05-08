@@ -20,7 +20,7 @@ fn main() -> anyhow::Result<()> {
     io.add_method("debug_traceTransaction", |params: Params| async {
         let (tx_hash, opts): (B256, GethDebugTracingOptions) = params.parse()?; // TODO: support second parameter to be optional
 
-        let evm = EVM::new("https://evm.confluxrpc.com", 1030);
+        let evm = EVM::new("https://evmtestnet.confluxrpc.com", 71);
 
         let result = evm
             .trace_transaction(tx_hash, opts)
